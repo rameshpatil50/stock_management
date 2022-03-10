@@ -1,0 +1,89 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+  <div class="card">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-lg-6 col-6">
+          <div class="small-box bg-info">
+            <div class="inner">
+              <h3>150</h3>
+              <h5>Total Assets</h5>
+            </div>
+            <div class="icon">
+              <i class="ion ion-bag"></i>
+            </div>
+            <a href="#" class="small-box-footer"
+              >More info <i class="fas fa-arrow-circle-right"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="col-lg-6 col-6">
+          <div class="small-box bg-warning">
+            <div class="inner">
+              <h3>44</h3>
+              <h5>Total Stock</h5>
+            </div>
+            <div class="icon">
+              <i class="ion ion-person-add"></i>
+            </div>
+            <a href="#" class="small-box-footer"
+              >More info <i class="fas fa-arrow-circle-right"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <div>
+        <button
+          type="button"
+          class="btn btn-primary"
+          [routerLink]="['/addassets']"
+        >
+          <i class="fas fa-plus"></i> Add Assets
+        </button>
+      </div>
+      <br />
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th style="width: 10px">#</th>
+            <th>Assets</th>
+            <th>Current Stock</th>
+            <th>Add Stock</th>
+            <th>Remove Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stocklist of this._state.stock">
+            <td>{{ stocklist["id"] }}</td>
+            <td>{{ stocklist["Assets"] }}</td>
+            <td>{{ stocklist["Current_stock"] }}</td>
+            <td>
+              <input type="number" style="width: 40px" />
+              <a class="btn bg-gradient-success">
+                <i class="fas fa-plus"></i> Add
+              </a>
+            </td>
+            <td>
+              <input type="number" style="width: 40px" />
+              <a class="btn btn-danger"><i class="fas fa-trash"></i> Remove </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="card-footer clearfix">
+      <ul class="pagination pagination-sm m-0 float-right">
+        <li class="page-item"><a class="page-link" href="#">«</a></li>
+        <li class="page-item"><a class="page-link" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">»</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- /.content-wrapper -->
